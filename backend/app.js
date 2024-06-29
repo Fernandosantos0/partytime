@@ -9,7 +9,7 @@ const colors = require('colors');
 /* Invocando o express */
 const app = express();
 
-/* Usando módulo para domínio */
+/* Middleware para liberar a api por domínios */
 app.use(cors());
 
 /* Tratando o envio de dados pelo body da página */
@@ -31,6 +31,6 @@ app.on('server-on', () => {
     const port = process.env.PORT || 3000;
     const host = process.env.HOST || 'localhost';
     app.listen(port, host, () => {
-        console.log(`Server ON - http:${host}:${port}`.green.bold);
+        console.log(`Server ON - http://${host}:${port}/api`.green.bold);
     });
 });
